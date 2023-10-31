@@ -16,6 +16,9 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,300;0,400;1,100;1,300&family=Noto+Serif:ital,wght@1,200&family=Roboto+Slab:wght@100;200;300;400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    <!--Javascript file-->
+    <script type="text/javascript" src=".app.js"></script>
   </head>
 
   <body>
@@ -75,6 +78,45 @@
           </span>
 
           <form id="rego-form" class="Roboto-Slab" method="post">
+            <!--Login details section-->
+            <h2 class="form-subheading">Login Details</h2>
+
+            <label>Email Address <span class="required">*</span></label>
+            <br />
+            <input
+              type="text"
+              name="email"
+              id="email"
+              pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+              onchange=""
+              required
+            />
+            <br />
+
+            <label>Password <span class="required">*</span></label>
+            <br />
+            <input
+              type="text"
+              name="pword"
+              id="pword"
+              pattern="[A-Za-z]{1,}"
+              required
+            />
+            <br />
+
+            <label>Re-enter Password <span class="required">*</span></label>
+            <br />
+            <input
+              type="text"
+              name="pword"
+              id="pword"
+              pattern="[A-Za-z]{1,}"
+              required
+            />
+            <br />
+
+            <!--User details section-->
+            <h2 class="form-subheading">User Details</h2>
             <label>First Name <span class="required">*</span></label>
             <br />
             <input
@@ -97,36 +139,28 @@
             />
             <br />
 
-            <label>Email Address <span class="required">*</span></label>
+            <label>DOB (dd/mm/yyyy)<span class="required">*</span></label>
             <br />
             <input
               type="text"
-              name="email"
-              id="email"
-              pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+              name="DOB"
+              id="DOB"
+              pattern="[A-Za-z]{1,}"
               required
             />
             <br />
 
-            <label
-              >If you have an affiliation to a company or organisation, please
-              list it here</label
-            >
+            <label>Gender<span class="required">*</span></label>
             <br />
-            <input type="text" name="affiliation" id="affiliation" />
-            <br />
-
-            <label>Dietary Requirements</label>
-            <br />
-            <textarea
-              rows="2"
-              cols="50"
-              name="dietary"
-              maxlength="50"
-            ></textarea>
+            <select id="gender-dropdown" name="gender">
+              <option selected>Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="prefer not to say">Prefer Not to Say</option>
+            </select>
             <br />
 
-            <input type="submit" value="Submit Form" />
+            <input type="submit" id="submit" value="Submit Form" />
           </form>
         </div>
       </div>

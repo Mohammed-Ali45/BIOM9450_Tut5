@@ -407,6 +407,23 @@ footer {
   color: red;
 }
 
+/* Start of assignment 5 specific styling */
+
+.form-subheading {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+
+  color: #bba17a;
+  font-size: 2rem;
+}
+
+#gender-dropdown {
+  margin-top: 10px;
+  margin-bottom: 50px;
+
+  font-size: 1rem;
+}
+
 /* End of registration.html specific styling*/
 
 /*Start of for-students-and-professionals.html

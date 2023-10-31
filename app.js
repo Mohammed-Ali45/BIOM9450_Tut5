@@ -1,0 +1,3 @@
+let validate = {
+  email: function () {},
+};
