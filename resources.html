@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--1st reset, 2nd is style-->
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>z5255825 Tutorial 4</title>
+
+    <!--Imported fonts from google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,300;0,400;1,100;1,300&family=Noto+Serif:ital,wght@1,200&family=Roboto+Slab:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!--header is here, all the stuff that stays stuck at the top-->
+    <header>
+      <div class="container nav narrowed center Roboto-Slab">
+        <a href="./index.html">
+          <img id="logo" src="./images/logos/logo.png" />
+        </a>
+
+        <nav class="Navigation-bar">
+          <ul>
+            <li><a class="nav-button" href="./whats-on.html">What's On?</a></li>
+            <li>
+              <a class="nav-button" href="./for-students-and-professionals.html"
+                >For students & Professionals
+              </a>
+            </li>
+            <li><a class="nav-button" href="./resources.html">Resources</a></li>
+            <li>
+              <a class="nav-button" href="./contact-us.html">Contact Us</a>
+            </li>
+          </ul>
+        </nav>
+
+        <h3>
+          <a class="nav-button-rego" href="./registration.html">
+            Register your Interest
+          </a>
+        </h3>
+      </div>
+    </header>
+
+    <div class="header-fixer"></div>
+
+    <section class="container narrowed center flex-column">
+      <h1 class="Roboto-Slab">Resources</h1>
+      <p class="body-para Noto-Sans">
+        Check the following resources to learn more about health messaging and
+        medical data classification
+      </p>
+
+      <!--ICD-10 resource list-->
+      <ul class="resources Noto-Sans">
+        For ICD-10 related resources:
+        <li>
+          <a
+            class="link"
+            target="_blank"
+            href="https://www.cdc.gov/nchs/icd/icd9cm.htm"
+            >ICD-9-CM CDC</a
+          >
+        </li>
+        <li>
+          <a
+            class="link"
+            target="_blank"
+            href="https://www.cdc.gov/nchs/icd/icd10.htm"
+            >ICD-10 CDC</a
+          >
+        </li>
+        <li>
+          <a
+            class="link"
+            target="_blank"
+            href="https://www.who.int/standards/classifications/classification-of-diseases"
+            >WHO on ICD-11</a
+          >
+        </li>
+        <li>
+          <a
+            class="link"
+            target="_blank"
+            href="https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-021-01534-6"
+            >BMC Open access article on ICD-11</a
+          >
+        </li>
+        <li>
+          <a
+            class="link"
+            target="_blank"
+            href="https://www.mja.com.au/journal/1998/169/8/introducing-icd-10-am-australian-hospitals"
+            >The Medical Journal of Australia on ICD-10-AM</a
+          >
+        </li>
+        <li>
+          <a
+            class="link"
+            target="_blank"
+            href="https://revcycleintelligence.com/news/icd-1-to-icd-11-timeline-highlights-healthcares-evolution"
+            >Historical Development of ICD</a
+          >
+        </li>
+      </ul>
+
+      <!--HL7 resource list-->
+      <ul class="resources Noto-Sans">
+        For HL7 related resources:
+
+        <li>
+          <a
+            class="link"
+            target="_blank"
+            href="https://www.hl7.org/about/index.cfm?ref=nav"
+            >Health Level 7 International</a
+          >
+        </li>
+        <li>
+          <a
+            class="link"
+            target="_blank"
+            href="https://en.wikipedia.org/wiki/Health_Level_7"
+            >HL7 (Wikipedia)</a
+          >
+        </li>
+        <li>
+          <a
+            class="link"
+            target="_blank"
+            href="https://en.wikipedia.org/wiki/OSI_model"
+            >ISO Open Systems Interconnection Model (Wikipedia)</a
+          >
+        </li>
+        <li>
+          <a
+            class="link"
+            target="_blank"
+            href="https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/"
+            >Cloudflare - The OSI Model</a
+          >
+        </li>
+        <li>
+          <a
+            class="link"
+            target="_blank"
+            href="https://osi-model.com/application-layer/"
+            >OSI Level 7: Application Layer</a
+          >
+        </li>
+        <li>
+          <a
+            class="link"
+            target="_blank"
+            href="https://www.healthit.gov/sites/default/files/2019-08/ONCFHIRFSWhatIsFHIR.pdf"
+            >HL7 Fast Healthcare Interoperabiltiy Resources</a
+          >
+        </li>
+        <li>
+          <a
+            class="link"
+            target="_blank"
+            href="https://orionhealth.com/au/blog/what-is-hl7-and-why-does-healthcare-need-it/"
+            >Orion health on the necessity of HL7</a
+          >
+        </li>
+      </ul>
+
+      <ul class="resources Noto-Sans">
+        General resources on interoperability
+        <li>
+          <a
+            class="link"
+            target="_blank"
+            href="https://en.wikipedia.org/wiki/ISO/IEEE_11073"
+            >ISO 11073 (Wikipedia)</a
+          >
+        </li>
+        <li>
+          <a
+            class="link"
+            target="_blank"
+            href="https://www.globalfamilydoctor.com/site/DefaultSite/filesystem/documents/Groups/WICC/International%20Classification%20of%20Primary%20Care%20Dec16.pdf"
+            >Wonca on the International Classification of Primary Care (ICPC)</a
+          >
+        </li>
+        <li>
+          <a
+            class="link"
+            target="_blank"
+            href="https://www.dicomstandard.org/about-home"
+            >Digital Imaging and Communications in Medicine (DICOM)</a
+          >
+        </li>
+
+        <li>
+          <a
+            class="link"
+            target="_blank"
+            href="https://www.snomed.org/five-step-briefing"
+            >SNOMED CT - Clinical Terminology
+          </a>
+        </li>
+        <li>
+          <a
+            class="link"
+            target="_blank"
+            href="https://www.who.int/standards/classifications/other-classifications/international-classification-of-primary-care"
+            >International Classification of Primary Care, 2nd edition (ICPC-2)
+            - WHO
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="footer-margin flex-column">
+      <div class="footer-info container narrowed center">
+        <!--Mohammed's contact info-->
+        <ul>
+          <li class="footer-name">Mohammed Mohammed Ali</li>
+          <li>
+            <img src="./images/icons/mailto.png" /><a
+              class="link"
+              href="mailto:mohammed70011@hotmail.com"
+              >mohammed70011@hotmail.com</a
+            >
+          </li>
+          <li><img src="images/icons/telephone.png" />0467 241 911</li>
+        </ul>
+
+        <!--Victoria's contact info-->
+        <ul>
+          <li class="footer-name">Victoria Inthavong</li>
+          <li>
+            <img src="./images/icons/mailto.png" /><a
+              class="link"
+              href="mailto:victoria.inthavong@example.com"
+              >victoria.inthavong@example.com</a
+            >
+          </li>
+          <li><img src="images/icons/telephone.png" />0412 348 348</li>
+        </ul>
+
+        <!--Ruchal's contact info-->
+        <ul>
+          <li class="footer-name">Ruchal Kale</li>
+          <li>
+            <img src="./images/icons/mailto.png" /><a
+              class="link"
+              href="mailto:ruchal.kale@example.com"
+              >ruchal.kale@example.com</a
+            >
+          </li>
+          <li><img src="images/icons/telephone.png" />0452 348 348</li>
+        </ul>
+      </div>
+
+      <!--Company Address and socials-->
+      <div class="container narrowed center">
+        <div id="address">
+          <ul>
+            <li>Nawab Group PTY LTD</li>
+            <li>42 Davies Road</li>
+            <li>Kandos, NSW 2848</li>
+          </ul>
+        </div>
+
+        <div id="socials">
+          <img src="./images/icons/fb.png" />
+          <img src="./images/icons/insta.png" />
+          <img src="./images/icons/linkedin.png" />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

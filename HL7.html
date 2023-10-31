@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--1st reset, 2nd is style-->
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>z5255825 Tutorial 4</title>
+
+    <!--Imported fonts from google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,300;0,400;0,800;1,100;1,300&family=Noto+Serif:ital,wght@1,200;1,300&family=Roboto+Slab:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <header>
+    <div class="container nav narrowed center Roboto-Slab">
+      <a href="./index.html">
+        <img id="logo" src="./images/logos/logo.png" />
+      </a>
+
+      <nav class="Navigation-bar">
+        <ul>
+          <li><a class="nav-button" href="./whats-on.html">What's On?</a></li>
+          <li>
+            <a class="nav-button" href="./for-students-and-professionals.html"
+              >For students & Professionals
+            </a>
+          </li>
+          <li><a class="nav-button" href="./resources.html">Resources</a></li>
+          <li>
+            <a class="nav-button" href="./contact-us.html">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+
+      <h3>
+        <a class="nav-button-rego" href="./registration.html">
+          Register your Interest
+        </a>
+      </h3>
+    </div>
+  </header>
+
+  <div class="header-fixer"></div>
+
+  <img class="plenary-pic" src="./images/plenaries/HL72.jpg" />
+
+  <section class="container narrowed center flex-column">
+    <h1 class="Roboto-Slab">HL7 Focus Session</h1>
+    <div class="plenary-info">
+      <img src="./images/icons/loc-pin.png" />
+      <span class="Roboto-Slab">Roundhouse, Lower Campus</span>
+      <br />
+      <br />
+      <img src="./images/icons/calendar.png" />
+      <span class="Roboto-Slab">4pm-6pm, Saturday 18th November, 2023</span>
+    </div>
+    <p class="body-para Noto-Sans">
+      The HL7 standards represent a very important and necessary framework for
+      the standardisation of health communication and information exchange on an
+      international scale. The thesis centres around data interoperability,
+      facilitating the secure access of relevant electronic health records when
+      and where it is needed.
+      <br />
+      <br />
+      HL7 stands for "Health Level 7". The 7 refers to the seventh layer of the
+      ISO made of Open Systems Interconnection model (OSI). The standards were
+      created by a not-for-profit organisation founded in 1987, Health Level 7
+      International. The purpose is to standardise, and therefore make easier,
+      the exchange of any healthcare related data between the myriad of computer
+      systems underlying the healthcare system and its points of service. The
+      standards aim to do this specifically at the application level of the OSI
+      model, which is an abstraction layer that deals fundamentally with the
+      input and output of data. This is to say that it is concerned with how
+      information about some relevant healthcare endpoint, such as a patient's
+      medication, their diagnosis, or the results of their most recent
+      bloodtest, is organised, exchanged, and ultimately outputted.
+      <br />
+      <br />
+      In mediating the way in which data is organised and exchanged, HL7 defines
+      a set of messaging standards. When a specialist needs to access patient
+      records to assess their health and form a care pathway, they may need to
+      access information coming from several different computer systems in
+      pathology, radiology, family clinic and so on. Unless all of the computers
+      hosting that data speak the same language, the specialist will be unable
+      to access those records and make informed decisions based on the whole
+      picture. The system <span class="Noto-Serif">is not interoperable.</span>
+      <br />
+      <br />
+      This could for example lead to a duplicated blood test or imaging
+      procedure, which would cost more time and money for the healthcare
+      provider, and potentially the patient as well.
+    </p>
+
+    <img id="HL7-logo" src="./images/icons/hl7-logo.png" />
+
+    <p class="body-para Noto-Sans">
+      And so HL7, and the associated Fast Healthcare Interoperability Resources
+      (FHIR), tell software vendors how they should organise data so that it can
+      be sent to and read by other computer systems, therefore allowing users to
+      exchange information efficiently, and in the healthcare context, give
+      staff the whole picture when they need it to make informed decisions about
+      someone's health and wellbeing.
+      <br />
+      <br />
+      As software and network standards evolve, so too must the messaging
+      standards. Representatives from HL7 international will be talking about
+      how they keep up with the rapid rate of advancement of software and
+      network engineering, and how it can make healthcare systems more holistic
+      in their services to patients, even as the OSI model it was originally
+      based on is superseded.
+    </p>
+  </section>
+
+  <!--Footer-->
+  <footer class="footer-margin flex-column">
+    <div class="footer-info container narrowed center">
+      <!--Mohammed's contact info-->
+      <ul>
+        <li class="footer-name">Mohammed Mohammed Ali</li>
+        <li>
+          <img src="./images/icons/mailto.png" /><a
+            class="link"
+            href="mailto:mohammed70011@hotmail.com"
+            >mohammed70011@hotmail.com</a
+          >
+        </li>
+        <li><img src="images/icons/telephone.png" />0467 241 911</li>
+      </ul>
+
+      <!--Victoria's contact info-->
+      <ul>
+        <li class="footer-name">Victoria Inthavong</li>
+        <li>
+          <img src="./images/icons/mailto.png" /><a
+            class="link"
+            href="mailto:victoria.inthavong@example.com"
+            >victoria.inthavong@example.com</a
+          >
+        </li>
+        <li><img src="images/icons/telephone.png" />0412 348 348</li>
+      </ul>
+
+      <!--Ruchal's contact info-->
+      <ul>
+        <li class="footer-name">Ruchal Kale</li>
+        <li>
+          <img src="./images/icons/mailto.png" /><a
+            class="link"
+            href="mailto:ruchal.kale@example.com"
+            >ruchal.kale@example.com</a
+          >
+        </li>
+        <li><img src="images/icons/telephone.png" />0452 348 348</li>
+      </ul>
+    </div>
+
+    <!--Company Address and socials-->
+    <div class="container narrowed center">
+      <div id="address">
+        <ul>
+          <li>Nawab Group PTY LTD</li>
+          <li>42 Davies Road</li>
+          <li>Kandos, NSW 2848</li>
+        </ul>
+      </div>
+
+      <div id="socials">
+        <img src="./images/icons/fb.png" />
+        <img src="./images/icons/insta.png" />
+        <img src="./images/icons/linkedin.png" />
+      </div>
+    </div>
+  </footer>
+</html>

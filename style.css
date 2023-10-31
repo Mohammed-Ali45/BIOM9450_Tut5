@@ -1,0 +1,558 @@
+/* apply 
+box-sizing: border-box
+to all sections */
+
+/* universal classes for standardised styling */
+.container {
+  box-sizing: border-box;
+  display: flex;
+}
+
+.narrowed {
+  max-width: 1100px;
+}
+
+.less-narrowed {
+  max-width: 1440px;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+/* For when the header
+ covers stuff at the top */
+.header-fixer {
+  height: 5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  color: #bba17a;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #bba17a;
+}
+.body-para {
+  font-size: 1.3rem;
+  line-height: normal;
+  font-weight: 300;
+}
+
+.link {
+  color: #bba17a;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:visited {
+  color: #bba17a;
+  text-decoration: none;
+}
+
+.in-page {
+  scroll-margin-top: 5em;
+}
+
+::selection {
+  background: #bba17a;
+  color: white;
+}
+
+.top {
+  padding-top: 10px;
+  color: #3b3937;
+  font-size: 1.2rem;
+}
+
+.top:visited {
+  color: #3b3937;
+}
+
+.white-on-grey {
+  background-color: #3b3937;
+  color: white;
+}
+
+/* End universal classes */
+
+/* header styling*/
+header {
+  box-sizing: border-box;
+  background-color: blanchedalmond;
+  position: fixed;
+  width: 100%;
+}
+
+/* aligns all header elements */
+.nav {
+  align-items: center;
+}
+
+#logo {
+  height: 5rem;
+}
+
+/*spaces the nav buttons from the logo and rego button*/
+.Navigation-bar {
+  display: flex;
+  margin: 0 auto 0 2rem;
+}
+
+/*All the nav button spacing*/
+.Navigation-bar ul {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+}
+
+.nav-button {
+  padding: 0.5rem;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  color: black;
+
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-button-rego {
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  color: #3b3937;
+  background-color: white;
+  font-weight: 400;
+
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/* all the pseudoclasses for the main nav-buttons */
+/* for the logo on the header*/
+
+.nav-button:visited {
+  color: black;
+}
+
+.nav-button:hover {
+  background-color: #3b3937;
+  color: blanchedalmond;
+}
+
+/* specifically for the reg button */
+.nav-button-rego:visited {
+  color: #3b3937;
+}
+
+.nav-button-rego:hover {
+  background-color: #3b3937;
+  color: white;
+}
+
+/*end of header styling*/
+
+/* Start of footer styling */
+
+footer {
+  font-family: "Noto Sans", sans-serif;
+
+  background-color: #3b3937;
+  color: #bba17a;
+
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* Workshop organiser contact info */
+.footer-info ul {
+  line-height: 1.2rem;
+}
+
+.footer-info {
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.footer-name {
+  text-indent: 21px;
+}
+
+.footer-info img {
+  vertical-align: middle;
+  max-height: 1rem;
+  padding: 0px 5px 5px 0;
+}
+
+/* To only be used when necessary */
+.footer-margin {
+  margin-top: 5rem;
+}
+
+/* Socials and address section */
+
+#socials {
+  margin-left: auto;
+  margin-top: auto;
+}
+
+#socials img {
+  height: 40px;
+  border-radius: 0.2rem;
+  margin-left: 0.4rem;
+}
+
+/* end footer styling */
+
+/* Start of index.html specific styling */
+
+/*landing*/
+
+/*this handles the pics on landing*/
+.landing {
+  display: grid;
+}
+
+.grid {
+  grid-area: 1/1;
+}
+
+#landing-pic {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+#landing-logo {
+  width: 60%;
+  margin: auto;
+}
+
+/* This handles content in the landing*/
+
+.landing-content {
+  padding-top: 100px;
+}
+
+.landing h1 {
+  font-size: 2rem;
+  color: blanchedalmond;
+  text-align: center;
+}
+
+.quote {
+  font-size: 1.5rem;
+  color: blanchedalmond;
+  margin: auto;
+}
+
+/* Main venue info */
+.venue-info {
+  margin-top: 5%;
+  width: 35%;
+}
+.date-loc {
+  color: blanchedalmond;
+  align-items: center;
+}
+
+.date-loc img {
+  width: 6%;
+  padding: 10px;
+  margin-left: 22%;
+}
+
+/* Big rego button */
+.Big-Rego-button {
+  box-sizing: border-box;
+
+  width: fit-content;
+
+  margin-top: 4rem;
+}
+
+.Big-Rego-button a {
+  text-decoration: none;
+  color: blanchedalmond;
+  text-align: center;
+  font-size: 2rem;
+
+  padding: 1rem;
+
+  border: solid 0.1rem;
+  border-color: blanchedalmond;
+  border-radius: 0.4rem;
+
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/* pseudoclasses for the big button */
+.Big-Rego-button a:hover {
+  background-color: white;
+  color: #bba17a;
+}
+
+#intro {
+  margin-bottom: 5rem;
+}
+
+#advancement img {
+  flex-shrink: 0;
+  width: 50%;
+  height: 50%;
+}
+
+#advancement div {
+  padding: 50px;
+}
+
+.index-text {
+  font-size: 2rem;
+}
+
+#roundhouse {
+  margin-top: 3rem;
+  max-width: 100%;
+}
+/* end of index.html specific styling */
+
+/* whats-on.html specific styling */
+
+#campus-map {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.date {
+  margin-left: 20%;
+  margin-top: 15%;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #bba17a;
+}
+
+.go-right {
+  margin-left: 25%;
+}
+
+.time-row {
+  font-size: 2rem;
+  font-weight: 800;
+  border-bottom: solid 2px;
+}
+
+#event-table th,
+#event-table td {
+  padding: 15px;
+}
+
+.table-pics {
+  max-width: 40rem;
+  max-height: 20rem;
+  vertical-align: text-top;
+}
+
+.loc-pin {
+  font-size: 1.5rem;
+}
+
+.loc-pin img {
+  max-width: 7%;
+  vertical-align: middle;
+}
+
+/* whats-on.html specific styling */
+
+/* registration.html specific styling */
+#rego-page {
+  background-color: white;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  margin-top: 5rem;
+  padding: 4rem;
+}
+
+#rego-form {
+  padding: 2rem;
+  margin-top: 10%;
+  font-size: 1.4rem;
+}
+
+#rego-form input,
+#rego-form textarea {
+  font-size: 1.3rem;
+  margin-top: 10px;
+  margin-bottom: 50px;
+
+  border: solid 1px #3b3937;
+}
+
+#rego-form input:focus,
+#rego-form textarea:focus {
+  border: solid 1px blanchedalmond;
+  outline: solid 1px #bba17a;
+}
+
+.required {
+  color: red;
+}
+
+/* End of registration.html specific styling*/
+
+/*Start of for-students-and-professionals.html
+specific styling */
+
+#research {
+  margin-bottom: 3rem;
+}
+
+#research img {
+  flex-shrink: 0;
+  width: 50%;
+  height: 50%;
+}
+
+#research div {
+  padding: 50px;
+}
+
+#guidelines {
+  line-height: 3rem;
+  list-style-type: disc;
+}
+
+#abstract-sections {
+  text-indent: 80px;
+  list-style-type: square;
+  list-style-position: inside;
+}
+
+#abstract-form {
+  margin-top: 3rem;
+}
+
+#abstract-form input {
+  font-size: 2rem;
+  color: #3b3937;
+}
+
+/*End of for-students-and-professionals.html
+specific styling */
+
+/* Start of plenary session specific styling */
+.plenary-pic {
+  width: 100%;
+}
+
+.plenary-info {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.plenary-info img {
+  width: 3%;
+  vertical-align: middle;
+}
+
+#HL7-logo {
+  width: 40%;
+  margin: auto;
+}
+
+#ICD-10-book {
+  width: 40%;
+  margin: 2rem auto;
+}
+
+/* Start of resources.html styling */
+.resources {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  list-style-type: square;
+}
+
+.resources li {
+  padding: 10px;
+}
+
+/* End of resources.html styling */
+
+/* Start of contact-us.html styling */
+#OR {
+  width: 100%;
+}
+
+#contact-us h2 {
+  color: #3b3937;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+#contact-boxes {
+  margin-top: 5rem;
+  justify-content: space-between;
+}
+
+#contact-boxes div {
+  background-color: blanchedalmond;
+  padding: 2rem;
+  width: 43%;
+}
+
+#email-inquiry label {
+  font-size: 1.4rem;
+}
+
+#email-inquiry input,
+#email-inquiry textarea {
+  font-size: 1.4rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#email-inquiry input,
+#email-inquiry textarea {
+  border: solid 1px #3b3937;
+}
+
+#email-inquiry input:focus,
+#email-inquiry textarea:focus {
+  border: solid 1px blanchedalmond;
+  outline: solid 1px #bba17a;
+}
+
+#contact-details {
+  font-size: 1.4rem;
+}
+
+#contact-details li {
+  padding-bottom: 80px;
+}
+
+#contact-details a {
+  color: #3b3937;
+  text-decoration: underline;
+}
+
+/* Fonts */
+.Roboto-Slab {
+  font-family: "Roboto Slab", serif;
+}
+
+.Noto-Serif {
+  font-family: "Noto Serif", serif;
+}
+
+.Noto-Sans {
+  font-family: "Noto Sans", sans-serif;
+}

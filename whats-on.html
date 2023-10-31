@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--1st reset, 2nd is style-->
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>z5255825 Tutorial 4</title>
+
+    <!--Imported fonts from google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,300;0,400;0,800;1,100;1,300&family=Noto+Serif:ital,wght@1,200;1,400&family=Roboto+Slab:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!--header is here, all the stuff that stays stuck at the top-->
+    <header>
+      <div class="container nav narrowed center Roboto-Slab">
+        <a href="./index.html">
+          <img id="logo" src="./images/logos/logo.png" />
+        </a>
+
+        <nav class="Navigation-bar">
+          <ul>
+            <li><a class="nav-button" href="./whats-on.html">What's On?</a></li>
+            <li>
+              <a class="nav-button" href="./for-students-and-professionals.html"
+                >For students & Professionals
+              </a>
+            </li>
+            <li><a class="nav-button" href="./resources.html">Resources</a></li>
+            <li>
+              <a class="nav-button" href="./contact-us.html">Contact Us</a>
+            </li>
+          </ul>
+        </nav>
+
+        <h3>
+          <a class="nav-button-rego" href="./registration.html">
+            Register your Interest
+          </a>
+        </h3>
+      </div>
+    </header>
+
+    <div class="header-fixer"></div>
+
+    <section class="flex-column container narrowed center">
+      <h1 class="Roboto-Slab">Event Schedule</h1>
+      <p class="body-para Noto-Sans">
+        Find all the major talks, presentations, workshops and their details
+        across the 3 days the event runs here.
+        <br />
+        <br />
+        The entire workshop will be held on the UNSW Campus in Kensington, 2033.
+        On all 3 days, the roundhouse (lower campus) will be open as a hub for
+        mingling as well as a venue for the larger events. A map of the campus
+        can be found below, and a digital copy with labels and legends for
+        individual buildings can be found
+        <a
+          class="link"
+          target="_blank"
+          href="https://www.estate.unsw.edu.au/sites/default/files/documents/Kensington%20Campus%20Map%20-%20April%202023.pdf"
+          >here</a
+        >
+        <br />
+        <br />
+        Bathrooms are located in each of the buildings hosting events as well as
+        most other buildings. The workshop will start at 9am in the Roundhouse
+        on Friday 17th November.
+        <br />
+        <br />
+        For any issues or inquiries during the workshop, please call us at
+        <span class="link Roboto-Slab">9584 3847</span>
+      </p>
+
+      <!--Google maps frame of UNSW campus-->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.9231326817885!2d151.2287377814805!3d-33.91737786659348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12b18b0302c1a7%3A0x1d017d69037a07a0!2sUNSW%20Sydney!5e0!3m2!1sen!2sau!4v1697783334190!5m2!1sen!2sau"
+        width="800"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        class="center"
+        id="campus-map"
+      ></iframe>
+
+      <p class="body-para Roboto-Slab">
+        Shortcuts to the event schedules for each of the days can be found here:
+        <br />
+        - <a class="link" href="#Friday">Day 1: Friday 17th November</a>
+        <br />
+        -
+        <a class="link" href="#Saturday">Day 2: Saturday 18th November</a>
+        <br />
+        - <a class="link" href="#Sunday">Day 3: Sunday 19th November</a>
+      </p>
+    </section>
+
+    <section
+      id="event-table"
+      class="flex-column container less-narrowed center"
+    >
+      <h2 id="Friday" class="date in-page Noto-Serif">Friday 17th November</h2>
+
+      <table>
+        <tbody class="Roboto-Slab">
+          <!--Start of schedule template pic-right-->
+          <tr>
+            <td class="time-row Noto-Sans" colspan="2">11am-1pm</td>
+          </tr>
+          <tr>
+            <td>
+              <h3>What are the motivations for rigorous EHR?</h3>
+              <br />
+              <span class="body-para Noto-Sans">
+                What exactly is the point of being so nitpicky about the way we
+                store info about patients? Why do we need standards for
+                classification of diseases or therapies? Are medical textbooks
+                not enough? Why is a task as simple as taking vitals contingent
+                on so many complex systems? What are those systems comprised of?
+                Come see experts in the field of Health coding paint the big
+                picture that will set the stage for the rest of the weekend
+              </span>
+              <br />
+              <br />
+            </td>
+            <td rowspan="2">
+              <img class="table-pics" src="./images/panel/disc_MATSCI.jpg" />
+            </td>
+          </tr>
+          <tr>
+            <td class="loc-pin">
+              <img src="./images/icons/loc-pin.png" />
+              John Clancy Auditorium, Upper Campus
+            </td>
+          </tr>
+          <!--End of schedule template pic-right-->
+          <!--Start of schedule template pic-left-->
+          <tr>
+            <td class="time-row Noto-Sans" colspan="2">2pm-3pm</td>
+          </tr>
+          <tr>
+            <td rowspan="2">
+              <img class="table-pics" src="./images/lec_pres.jpg" />
+            </td>
+            <td>
+              <h3>Health software development workshop</h3>
+              <br />
+              <span class="body-para Noto-Sans">
+                What the hell is an ISO 11073? How can I integrate my health
+                software into the greater digital health infrastructure?
+                Engineers from the International Standards Organisation and
+                Continua provide the skeleton for a well implemented health
+                software
+              </span>
+              <br />
+              <br />
+            </td>
+          </tr>
+          <tr>
+            <td class="loc-pin">
+              <img src="./images/icons/loc-pin.png" />
+              K-H6-G16, Tyree Energy Technology
+            </td>
+          </tr>
+          <!--End of schedule template pic-left-->
+          <!--Start of schedule template pic-right-->
+          <tr>
+            <td>
+              <h3>The end of the X-ray View Box?</h3>
+              <br />
+              <span class="body-para Noto-Sans">
+                A masterclass in imaging messaging standards, DICOM outlines the
+                steps necessary to establish themselves as the leaders in
+                Digital communications and imaging in medicine.
+              </span>
+              <br />
+              <br />
+            </td>
+            <td rowspan="2">
+              <img class="table-pics" src="./images/xray.jpg" />
+            </td>
+          </tr>
+          <tr>
+            <td class="loc-pin">
+              <img src="./images/icons/loc-pin.png" />
+              LG02 Medical Sciences Seminar Room, C27 Wallace Wurth
+            </td>
+          </tr>
+          <!--End of schedule template pic-right-->
+          <!--Start of schedule template pic-right-->
+          <tr>
+            <td class="time-row Noto-Sans" colspan="2">4pm-6pm</td>
+          </tr>
+          <tr>
+            <td>
+              <h3>ICD-10-AM Focus session</h3>
+              <br />
+              <span class="body-para Noto-Sans">
+                Australia has implemented the International Classification of
+                Diseases and Health Problems, Tenth Revision, with an Australian
+                Modification. Staff legislators from the NSW Health Ministry
+                will be joined by practitioners from the nearby Prince Of Wales
+                Hospital where they will give the insider flick on why it is
+                important to have these standards in place for hospitals private
+                and public across Australia.
+                <br />
+                <br />
+                To read more about ICD-10-AM,
+                <a class="link" href="./ICD-10.html">Click here</a>
+              </span>
+              <br />
+              <br />
+            </td>
+            <td rowspan="2">
+              <img class="table-pics" src="./images/conf/zoom.jpg" />
+            </td>
+          </tr>
+          <tr>
+            <td class="loc-pin">
+              <img src="./images/icons/loc-pin.png" />
+              Roundhouse, Lower Campus
+            </td>
+          </tr>
+          <!--End of schedule template pic-right-->
+        </tbody>
+      </table>
+      <a class="top Noto-Serif" href="#top">Back to top</a>
+
+      <h2 id="Saturday" class="date in-page Noto-Serif">
+        Saturday 18th November
+      </h2>
+
+      <table>
+        <tbody class="Roboto-Slab">
+          <!--Start of schedule template pic-right-->
+          <tr>
+            <td class="time-row Noto-Sans" colspan="2">11am-12pm</td>
+          </tr>
+          <tr>
+            <td>
+              <h3>First Day Recap</h3>
+              <br />
+              <span class="body-para Noto-Sans">
+                We understand not everyone can be everywhere all at once. This
+                short session will serve to summarise the amazing talks and
+                keynotes that were given on the prior first day of the event,
+                and provide guidance on accessing the associated resources.
+              </span>
+              <br />
+              <br />
+            </td>
+            <td rowspan="2">
+              <img class="table-pics" src="./images/conf/mingling.jpg" />
+            </td>
+          </tr>
+          <tr>
+            <td class="loc-pin">
+              <img src="./images/icons/loc-pin.png" />
+              Roundhouse, Lower Campus
+            </td>
+          </tr>
+          <!--End of schedule template pic-right-->
+          <!--Start of schedule template pic-left-->
+          <tr>
+            <td class="time-row Noto-Sans" colspan="2">12pm-1pm</td>
+          </tr>
+          <tr>
+            <td rowspan="2">
+              <img class="table-pics" src="./images/nurse-computer2.jpg" />
+            </td>
+            <td>
+              <h3>SNOMED CT and it's recent update</h3>
+              <br />
+              <span class="body-para Noto-Sans">
+                SNOMED CT is the global standard for scientifically validated
+                digitised medical terminology. It's importance can be as
+                specific as ensuring two patients with similar sicknesses have
+                equally similar EHRs, but can be as wide in scope as to have
+                implications in epedemiology. Representatives talk about what's
+                new and what's next.
+              </span>
+              <br />
+              <br />
+            </td>
+          </tr>
+          <tr>
+            <td class="loc-pin">
+              <img src="./images/icons/loc-pin.png" />
+              M15 Rupert Myers, Upper Campus
+            </td>
+          </tr>
+          <!--End of schedule template pic-left-->
+          <!--Start of schedule template pic-left-->
+          <tr>
+            <td class="time-row Noto-Sans" colspan="2">3pm-4pm</td>
+          </tr>
+          <tr>
+            <td rowspan="2">
+              <img class="table-pics go-right" src="./images/covid.jpg" />
+            </td>
+            <td>
+              <h3>COVID and its implications</h3>
+              <br />
+              <span class="body-para Noto-Sans">
+                The unprecedented pandemic that started in 2020 with the rapid
+                spreading of the COVID-19 virus took much of the world by
+                surprise, and shocked healthcare systems in Australia, with a
+                massive uptick in TeleHealth. So what have we learned, and how
+                might we equip digital infrastructure to better prepare
+                ourselves for a similar pandemic in the future?
+              </span>
+              <br />
+              <br />
+            </td>
+          </tr>
+          <tr>
+            <td class="loc-pin">
+              <img src="./images/icons/loc-pin.png" />
+              John Clancy Auditorium, Upper Campus
+            </td>
+          </tr>
+          <!--End of schedule template pic-left-->
+          <!--Start of schedule template pic-right-->
+          <tr>
+            <td class="time-row Noto-Sans" colspan="2">4pm-6pm</td>
+          </tr>
+          <tr>
+            <td>
+              <h3>HL7 Focus session</h3>
+              <br />
+              <span class="body-para Noto-Sans">
+                The task of securing Electronic Health Records is one of utmost
+                priority. The protection of patient confidentiality and the
+                security of their health records goes hand in hand. But the
+                representatives from HL7 will argue that the dedication to this
+                end can and has been excessive. They will also discuss the
+                importance of interoperability and accessibility where it is due
+                and how patients stand to benefit from HL7's proliferation.
+                <br />
+                <br />
+                To read more about HL7,
+                <a class="link" href="./HL7.html">Click here</a>
+              </span>
+              <br />
+              <br />
+            </td>
+            <td rowspan="2">
+              <img class="table-pics" src="./images/HL7.jpg" />
+            </td>
+          </tr>
+          <tr>
+            <td class="loc-pin">
+              <img src="./images/icons/loc-pin.png" />
+              Roundhouse, Lower Campus
+            </td>
+          </tr>
+          <!--End of schedule template pic-right-->
+        </tbody>
+      </table>
+      <a class="top Noto-Serif" href="#top">Back to top</a>
+
+      <h2 id="Sunday" class="date in-page Noto-Serif">Sunday 19th November</h2>
+
+      <table>
+        <tbody class="Roboto-Slab">
+          <!--Start of schedule template pic-right-->
+          <tr>
+            <td class="time-row Noto-Sans" colspan="2">10am-12pm</td>
+          </tr>
+          <tr>
+            <td>
+              <h3>2nd day recap and research showcase</h3>
+              <br />
+              <span class="body-para Noto-Sans">
+                As on Saturday, there will be a short summary of the previous
+                talks and a pointer towards useful resources from those talks.
+                <br />
+                The main event will involve the showcase of new research and
+                business ideas by students and professionals alike. Posters and
+                stalls will be laid out for attendees to consume and discuss
+                with the authors.
+              </span>
+              <br />
+              <br />
+            </td>
+            <td rowspan="2">
+              <img class="table-pics" src="./images/research.jpg" />
+            </td>
+          </tr>
+          <tr>
+            <td class="loc-pin">
+              <img src="./images/icons/loc-pin.png" />
+              Roundhouse, Lower Campus
+            </td>
+          </tr>
+          <!--End of schedule template pic-right-->
+          <!--Start of schedule template pic-right-->
+          <tr>
+            <td class="time-row Noto-Sans" colspan="2">1:30pm-3pm</td>
+          </tr>
+          <tr>
+            <td>
+              <h3>Interview with WONZA about ICP-2</h3>
+              <br />
+              <span class="body-para Noto-Sans">
+                On standardising digital healthcare practices, the World
+                Organisation of Family Doctors, WONZA is at the forefront when
+                it comes to supplying healthcare providers with the necessary
+                data to make decisions to refine primary care. There is also a
+                need to classify data in a simpler, less granular manner than
+                offered by the ICD standards. Representatives will, in detail,
+                discuss the complex relationships between patients, primary care
+                doctors, and healthcare providers at the government level and
+                where they fit into the equation in an international context.
+              </span>
+              <br />
+              <br />
+            </td>
+            <td rowspan="2">
+              <img class="table-pics" src="./images/ISS.jpg" />
+            </td>
+          </tr>
+          <tr>
+            <td class="loc-pin">
+              <img src="./images/icons/loc-pin.png" />
+              John Clancy Auditorium, Upper Campus
+            </td>
+          </tr>
+          <!--End of schedule template pic-right-->
+          <!--Start of schedule template pic-right-->
+          <tr>
+            <td>
+              <h3>Skill workshop</h3>
+              <br />
+              <span class="body-para Noto-Sans">
+                Across several rooms in close proximity to the main hub in the
+                roundhouse, there will be several skill based workshops working
+                on developing competency in the ISO 11073 Standards, with a
+                walkthrough of a hypothetical case of the design, manufacture,
+                and deployment of an ECG machine, a device very often utilised
+                in primary care medicine by various medical staff.
+              </span>
+              <br />
+              <br />
+            </td>
+            <td rowspan="2">
+              <img class="table-pics" src="./images/ECG.jpg" />
+            </td>
+          </tr>
+          <tr>
+            <td class="loc-pin">
+              <img src="./images/icons/loc-pin.png" />
+              G05, G07, E8 Science and Engineering, Lower Campus
+            </td>
+          </tr>
+          <!--End of schedule template pic-right-->
+          <!--Start of schedule template pic-right-->
+          <tr>
+            <td class="time-row Noto-Sans" colspan="2">4pm-6pm</td>
+          </tr>
+          <tr>
+            <td>
+              <h3>Wrap up and gift ceremony</h3>
+              <br />
+              <span class="body-para Noto-Sans">
+                At this point, there will have been a large number of talks and
+                presentations in the many facets of digital healthcare
+                infrastructure and where Australia and the world are headed in
+                the near future. The greatest learnings will be compiled and
+                presented in the context of the workshop as a whole.
+                <br />
+                There will also be gifts handed out to the presenters and
+                teachers that form the backbone of the workshop and make it so
+                valuable.
+              </span>
+              <br />
+              <br />
+            </td>
+            <td rowspan="2">
+              <img class="table-pics" src="./images/conf/main.jpg" />
+            </td>
+          </tr>
+          <tr>
+            <td class="loc-pin">
+              <img src="./images/icons/loc-pin.png" />
+              Roundhouse, Lower Campus
+            </td>
+          </tr>
+          <!--End of schedule template pic-right-->
+        </tbody>
+      </table>
+      <a class="top Noto-Serif" href="#top">Back to top</a>
+    </section>
+
+    <!--Footer-->
+    <footer class="footer-margin flex-column">
+      <div class="footer-info container narrowed center">
+        <!--Mohammed's contact info-->
+        <ul>
+          <li class="footer-name">Mohammed Mohammed Ali</li>
+          <li>
+            <img src="./images/icons/mailto.png" /><a
+              class="link"
+              href="mailto:mohammed70011@hotmail.com"
+              >mohammed70011@hotmail.com</a
+            >
+          </li>
+          <li><img src="images/icons/telephone.png" />0467 241 911</li>
+        </ul>
+
+        <!--Victoria's contact info-->
+        <ul>
+          <li class="footer-name">Victoria Inthavong</li>
+          <li>
+            <img src="./images/icons/mailto.png" /><a
+              class="link"
+              href="mailto:victoria.inthavong@example.com"
+              >victoria.inthavong@example.com</a
+            >
+          </li>
+          <li><img src="images/icons/telephone.png" />0412 348 348</li>
+        </ul>
+
+        <!--Ruchal's contact info-->
+        <ul>
+          <li class="footer-name">Ruchal Kale</li>
+          <li>
+            <img src="./images/icons/mailto.png" /><a
+              class="link"
+              href="mailto:ruchal.kale@example.com"
+              >ruchal.kale@example.com</a
+            >
+          </li>
+          <li><img src="images/icons/telephone.png" />0452 348 348</li>
+        </ul>
+      </div>
+
+      <!--Company Address and socials-->
+      <div class="container narrowed center">
+        <div id="address">
+          <ul>
+            <li>Nawab Group PTY LTD</li>
+            <li>42 Davies Road</li>
+            <li>Kandos, NSW 2848</li>
+          </ul>
+        </div>
+
+        <div id="socials">
+          <img src="./images/icons/fb.png" />
+          <img src="./images/icons/insta.png" />
+          <img src="./images/icons/linkedin.png" />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
