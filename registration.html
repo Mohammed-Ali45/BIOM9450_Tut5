@@ -87,7 +87,6 @@
               type="text"
               name="email"
               id="email"
-              pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
               onChange="emailCheck()"
               required
             />
@@ -98,27 +97,27 @@
             <label>Password <span class="required">*</span></label>
             <br />
             <input
-              type="text"
+              type="password"
               name="pword"
               id="pword"
-              pattern="[A-Za-z]{1,}"
+              onChange="passwordCheck()"
               required
             />
             <br />
-            <span id="" class="error-messages Noto-Sans"></span>
+            <span id="password-error" class="error-messages Noto-Sans"></span>
             <br />
 
             <label>Re-enter Password <span class="required">*</span></label>
             <br />
             <input
-              type="text"
-              name="pword"
-              id="pword"
-              pattern="[A-Za-z]{1,}"
+              type="password"
+              name="repword"
+              id="repword"
+              onChange="ReenterPasswordCheck()"
               required
             />
             <br />
-            <span id="" class="error-messages Noto-Sans"></span>
+            <span id="repassword-error" class="error-messages Noto-Sans"></span>
             <br />
 
             <!--User details section-->
@@ -129,11 +128,11 @@
               type="text"
               name="fname"
               id="fname"
-              pattern="[A-Za-z]{1,}"
+              onChange="nameCheck()"
               required
             />
             <br />
-            <span id="" class="error-messages Noto-Sans"></span>
+            <span id="firstname-error" class="error-messages Noto-Sans"></span>
             <br />
 
             <label>Last Name <span class="required">*</span></label>
@@ -142,22 +141,16 @@
               type="text"
               name="lname"
               id="lname"
-              pattern="[A-Za-z]{1,}"
+              onChange="nameCheck()"
               required
             />
             <br />
-            <span id="" class="error-messages Noto-Sans"></span>
+            <span id="lastname-error" class="error-messages Noto-Sans"></span>
             <br />
 
             <label>DOB (dd/mm/yyyy)<span class="required">*</span></label>
             <br />
-            <input
-              type="text"
-              name="DOB"
-              id="DOB"
-              pattern="[A-Za-z]{1,}"
-              required
-            />
+            <input type="text" name="DOB" id="DOB" required />
             <br />
             <span id="" class="error-messages Noto-Sans"></span>
             <br />
@@ -174,7 +167,7 @@
             <span id="" class="error-messages Noto-Sans"></span>
             <br />
 
-            <input type="submit" id="submit" value="Submit Form" />
+            <input type="submit" id="submit" value="Register now!" />
           </form>
         </div>
       </div>

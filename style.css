@@ -394,6 +394,7 @@ again in the .error-messages class */
 #rego-form textarea {
   font-size: 1.3rem;
   margin-top: 10px;
+  padding: 4px;
 
   border: solid 1px #3b3937;
 }
@@ -408,7 +409,11 @@ again in the .error-messages class */
   color: red;
 }
 
-/* Start of assignment 5 specific styling */
+/* Assignment 3 specific styling */
+
+#rego-form input[type="text"] {
+  width: 20rem;
+}
 
 .form-subheading {
   margin-top: 3rem;
@@ -430,8 +435,8 @@ again in the .error-messages class */
   display: inline-block;
 
   font-size: 1rem;
-  font-weight:300;
-  color:red;
+  font-weight: 300;
+  color: red;
 }
 
 /* End of registration.html specific styling*/
