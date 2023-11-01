@@ -388,11 +388,12 @@ footer {
   font-size: 1.4rem;
 }
 
+/* margin-bottom removed, it's added
+again in the .error-messages class */
 #rego-form input,
 #rego-form textarea {
   font-size: 1.3rem;
   margin-top: 10px;
-  margin-bottom: 50px;
 
   border: solid 1px #3b3937;
 }
@@ -422,6 +423,15 @@ footer {
   margin-bottom: 50px;
 
   font-size: 1rem;
+}
+
+.error-messages {
+  margin-bottom: 50px;
+  display: inline-block;
+
+  font-size: 1rem;
+  font-weight:300;
+  color:red;
 }
 
 /* End of registration.html specific styling*/

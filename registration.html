@@ -18,7 +18,7 @@
     />
 
     <!--Javascript file-->
-    <script type="text/javascript" src=".app.js"></script>
+    <script type="text/javascript" src="app.js"></script>
   </head>
 
   <body>
@@ -77,7 +77,7 @@
             for more details on guidelines and deadlines.
           </span>
 
-          <form id="rego-form" class="Roboto-Slab" method="post">
+          <form id="rego-form" class="Roboto-Slab" method="get">
             <!--Login details section-->
             <h2 class="form-subheading">Login Details</h2>
 
@@ -88,9 +88,11 @@
               name="email"
               id="email"
               pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
-              onchange=""
+              onChange="emailCheck()"
               required
             />
+            <br />
+            <span id="email-error" class="error-messages Noto-Sans"></span>
             <br />
 
             <label>Password <span class="required">*</span></label>
@@ -103,6 +105,8 @@
               required
             />
             <br />
+            <span id="" class="error-messages Noto-Sans"></span>
+            <br />
 
             <label>Re-enter Password <span class="required">*</span></label>
             <br />
@@ -113,6 +117,8 @@
               pattern="[A-Za-z]{1,}"
               required
             />
+            <br />
+            <span id="" class="error-messages Noto-Sans"></span>
             <br />
 
             <!--User details section-->
@@ -127,6 +133,8 @@
               required
             />
             <br />
+            <span id="" class="error-messages Noto-Sans"></span>
+            <br />
 
             <label>Last Name <span class="required">*</span></label>
             <br />
@@ -137,6 +145,8 @@
               pattern="[A-Za-z]{1,}"
               required
             />
+            <br />
+            <span id="" class="error-messages Noto-Sans"></span>
             <br />
 
             <label>DOB (dd/mm/yyyy)<span class="required">*</span></label>
@@ -149,6 +159,8 @@
               required
             />
             <br />
+            <span id="" class="error-messages Noto-Sans"></span>
+            <br />
 
             <label>Gender<span class="required">*</span></label>
             <br />
@@ -158,6 +170,8 @@
               <option value="female">Female</option>
               <option value="prefer not to say">Prefer Not to Say</option>
             </select>
+            <br />
+            <span id="" class="error-messages Noto-Sans"></span>
             <br />
 
             <input type="submit" id="submit" value="Submit Form" />
