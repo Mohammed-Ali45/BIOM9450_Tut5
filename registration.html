@@ -84,6 +84,7 @@
             <label>Email Address <span class="required">*</span></label>
             <br />
             <input
+              class="wide-field"
               type="text"
               name="email"
               id="email"
@@ -94,12 +95,14 @@
             <span id="email-error" class="error-messages Noto-Sans"></span>
             <br />
 
-            <label>Password <span class="required">*</span></label>
+            <label>Password<span class="required">*</span></label>
             <br />
             <input
+              class="wide-field"
               type="password"
               name="pword"
               id="pword"
+              placeholder="min 8 characters"
               onChange="passwordCheck()"
               required
             />
@@ -110,6 +113,7 @@
             <label>Re-enter Password <span class="required">*</span></label>
             <br />
             <input
+              class="wide-field"
               type="password"
               name="repword"
               id="repword"
@@ -125,10 +129,11 @@
             <label>First Name <span class="required">*</span></label>
             <br />
             <input
+              class="wide-field"
               type="text"
               name="fname"
               id="fname"
-              onChange="nameCheck()"
+              onChange="fnameCheck()"
               required
             />
             <br />
@@ -138,21 +143,53 @@
             <label>Last Name <span class="required">*</span></label>
             <br />
             <input
+              class="wide-field"
               type="text"
               name="lname"
               id="lname"
-              onChange="nameCheck()"
+              onChange="lnameCheck()"
               required
             />
             <br />
             <span id="lastname-error" class="error-messages Noto-Sans"></span>
             <br />
 
-            <label>DOB (dd/mm/yyyy)<span class="required">*</span></label>
+            <label>Date of Birth<span class="required">*</span></label>
             <br />
-            <input type="text" name="DOB" id="DOB" required />
+            <input
+              class="DOB"
+              type="text"
+              name="DOBday"
+              id="DOBday"
+              placeholder="dd"
+              maxlength="2"
+              onChange="dobCheck()"
+              required
+            />
+            /
+            <input
+              class="DOB"
+              type="text"
+              name="DOBmonth"
+              id="DOBmonth"
+              placeholder="mm"
+              maxlength="2"
+              onChange="dobCheck()"
+              required
+            />
+            /
+            <input
+              class="DOB"
+              type="text"
+              name="DOByear"
+              id="DOByear"
+              placeholder="yyyy"
+              maxlength="4"
+              onChange="dobCheck()"
+              required
+            />
             <br />
-            <span id="" class="error-messages Noto-Sans"></span>
+            <span id="DOB-error" class="error-messages Noto-Sans"></span>
             <br />
 
             <label>Gender<span class="required">*</span></label>
@@ -165,6 +202,14 @@
             </select>
             <br />
             <span id="" class="error-messages Noto-Sans"></span>
+            <br />
+
+            <input type="checkbox" />
+            <span id="marketing-text" class="Noto-Sans"
+              >Please tick this box if you would like to receive marketing
+              material</span
+            >
+            <br />
             <br />
 
             <input type="submit" id="submit" value="Register now!" />

@@ -411,7 +411,7 @@ again in the .error-messages class */
 
 /* Assignment 3 specific styling */
 
-#rego-form input[type="text"] {
+.wide-field {
   width: 20rem;
 }
 
@@ -425,7 +425,6 @@ again in the .error-messages class */
 
 #gender-dropdown {
   margin-top: 10px;
-  margin-bottom: 50px;
 
   font-size: 1rem;
 }
@@ -437,6 +436,20 @@ again in the .error-messages class */
   font-size: 1rem;
   font-weight: 300;
   color: red;
+}
+
+.DOB {
+  width: 3rem;
+}
+
+#rego-form input[type=checkbox] {
+  vertical-align: center;
+  margin-right: 20px;
+}
+
+#marketing-text {
+  font-size: 1rem;
+  color:#bba17a;
 }
 
 /* End of registration.html specific styling*/
