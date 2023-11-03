@@ -342,7 +342,8 @@ function finalCheck() {
     document.getElementById("repassword-error").textContent === "" &&
     document.getElementById("firstname-error").textContent === "" &&
     document.getElementById("lastname-error").textContent === "" &&
-    document.getElementById("DOB-error").textContent === ""
+    document.getElementById("DOB-error").textContent === "" &&
+    document.getElementById("gender-error").textContent === ""
   ) {
     return true;
   } else {
