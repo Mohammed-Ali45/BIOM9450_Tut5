@@ -13,7 +13,8 @@ function resetBorderStyle(inputField, errorTextElement) {
   inputField.style.borderColor = "";
 }
 
-// Generic error generator, displays errorText parameter as the error text, makes border of respective input field red too
+/* Generic error generator, displays errorText parameter as the error text,
+ makes border of respective input field red too */
 function throwError(inputField, errorTextElement, errorText) {
   errorTextElement.innerHTML = errorText;
   inputField.style.borderColor = "red";
@@ -27,14 +28,17 @@ function emailCheck() {
   Defines regular expression used to check if input represents valid email */
   let emailInput = document.getElementById("email");
   let emailError = document.getElementById("email-error");
-  /* Allows lowercase, uppercase, numerical and select special characters before the @
-  any number of '.'s after the @, but only 2 to 4 characters after the last '.' */
+  /* Allows lowercase, uppercase, numerical and select special characters
+   before the @, any number of '.'s after the @, but only 2 to 4 characters
+   after the last '.' */
   const emailRegex = new RegExp(
     /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
   );
 
-  /* Throws error in <span> tag under input element if user input does not match regular expression
-  Resets the border style and clears error if input does match regular expression*/
+  /* Throws error in <span> tag under input element if user input does not
+   match regular expression.
+   Resets the border style and clears error if input does match regular
+   expression*/
   if (emailInput.value.length === 0) {
     emptyFieldError(emailInput, emailError);
   } else if (emailInput.value.match(emailRegex) === null) {
@@ -47,13 +51,15 @@ function emailCheck() {
 //Password validation
 function passwordCheck() {
   /* Retrieving user input and <span> element to display errors
-  Defines regular expression used to check if password conforms to constraints */
+  Defines regular expression used to check if password conforms to
+  constraints */
   let passwordInput = document.getElementById("pword");
   let passwordError = document.getElementById("password-error");
   const passwordRegex = new RegExp(/^[a-zA-Z0-9]{8,}$/);
 
-  /* Throws error in <span> tag under input element if user input does not match regular expression
-  or does not contain at least one lowercase, uppercase, and one numerical character*/
+  /* Throws error in <span> tag under input element if user input does not
+   match regular expression or does not contain at least one lowercase,
+   uppercase, and one numerical character */
   if (passwordInput.value.length === 0) {
     emptyFieldError(passwordInput, passwordError);
   } else if (passwordInput.value.length < 8) {
@@ -95,7 +101,7 @@ function ReenterPasswordCheck() {
   let rePasswordInput = document.getElementById("repword");
   let rePasswordError = document.getElementById("repassword-error");
 
-  // Displays error if passwords do not match after checking if the field is empty
+  // Displays error if passwords do not match after checking if field is empty
   if (rePasswordInput.value.length === 0) {
     emptyFieldError(rePasswordInput, rePasswordError);
   } else if (rePasswordInput.value === password.value) {
@@ -107,14 +113,16 @@ function ReenterPasswordCheck() {
 
 // First and last name validation
 function fnameCheck() {
-  //Retrieves user input and <span> element for displaying errors for first name input field
+  /* Retrieves user input and <span> element for displaying errors for first
+  name input field */
   let firstNameInput = document.getElementById("fname");
   let firstNameError = document.getElementById("firstname-error");
 
   // Defines a regular expression to check if name falls within constraints
   const nameRegex = new RegExp(/^[a-zA-Z-']+( [a-zA-Z]+)*$/);
 
-  /* Throws error if field is empty, or if input does not match the defined regular expression
+  /* Throws error if field is empty, or if input does not match the defined
+  regular expression.
   Clears error and resets border styling when input is valid */
   if (firstNameInput.value.length === 0) {
     emptyFieldError(firstNameInput, firstNameError);
@@ -165,23 +173,27 @@ function dobCheck() {
   //retrieving <span> tag for printing errors under intput field
   let dobError = document.getElementById("DOB-error");
 
-  /*input flags that are true when given field passes all checks.
-  Errors and associated styling are cleared from respective input fields if flags are true.
-  Any errors thrown by below code blocks are retained if at least one flag is false for each input*/
+  /* Input flags that are true when given field passes all checks.
+  Errors and associated styling are cleared from respective input fields if
+  flags are true.
+  Any errors thrown by below code blocks are retained if at least one flag is
+  false for each input */
   let isDayHappy;
   let isMonthRangeHappy;
   let isMonthLengthHappy;
   let isYearHappy;
 
-  /*Year validity check.
-  Error is displayed if a year too far into the past or any year in the future is inputted. */
+  /* Year validity check.
+  Error is displayed if a year too far into the past or any year in the future
+  is inputted. */
   if (isNaN(year) || year < 1900 || year > 2023) {
     throwError(yearInput, dobError, "Please enter a valid year");
     isYearHappy = false;
-    /*This is only reached when the inputted year is valid.
-    Clears error message and resets border styling if existing error also came from this block.
+    /* This is only reached when the inputted year is valid.
+    Clears error message and resets border styling if existing error also came
+    from this block.
     Prevents clearing error message thrown by different block,
-    or resetting border styling when an error should still be active*/
+    or resetting border styling when an error should still be active */
   } else if (dobError.textContent === "Please enter a valid year") {
     resetBorderStyle(yearInput, dobError);
     //Sets year flag to true only if the year is valid
@@ -189,7 +201,7 @@ function dobCheck() {
     isYearHappy = true;
   }
 
-  /*Month validity checks
+  /* Month validity checks
   checking if month is valid, goes through same check as year block.
   Two input flags included to prevent input length check potentially overriding
   false result from range check below */
@@ -213,8 +225,9 @@ function dobCheck() {
     isMonthLengthHappy = true;
   }
 
-  /*Checks if inputted day exists within the inputted month, throws relevant error message if not
-  Checks Feb first, then all months with 30 days. */
+  /*Checks if inputted day exists within the inputted month, throws relevant
+  error message if not.
+  Checks Feb first, then all months with 30 days */
   if (month === 2 && day > 28) {
     throwError(dayInput, dobError, "Please enter a calendar day that exists");
     isDayHappy = false;
@@ -237,8 +250,10 @@ function dobCheck() {
     isDayHappy = true;
   }
 
-  /*Same format check as for mm above. Checks day is written in dd, throws error if not */
-  // the final flag change is not necessary in this block because no errors can take precedence over this one
+  /*Same format check as for mm above. Checks day is written in dd, throws
+  error if not
+  Final flag change is not necessary in this block because no errors can take
+  precedence over this one */
   if (dayInput.value.length !== 2) {
     throwError(dayInput, dobError, "Please enter day as dd");
     isDayHappy = false;
@@ -246,9 +261,8 @@ function dobCheck() {
     resetBorderStyle(dayInput, dobError);
   }
 
-  // Rudimentary method to prevent future dates inside 2023 from being submitted
-  /* Splitting the below into 2 blocks with unique error messages and giving each block
-  ability to clear its own error like above blocks would be more complete*/
+  /* Rudimentary method to prevent future dates inside 2023 from being
+  submitted */
   if (year === 2023 && month > 11) {
     throwError(monthInput, dobError, "Please enter a valid month");
     isMonthRangeHappy = false;
@@ -271,7 +285,7 @@ function dobCheck() {
   }
 
   /* Will reset border style if all input flags for given field are true 
-  clears red border from fields with no active errors*/
+  clears red border from fields with no active errors */
   if (isYearHappy === true) {
     yearInput.style.borderColor = "";
   }
