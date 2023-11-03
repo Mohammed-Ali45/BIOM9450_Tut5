@@ -442,17 +442,26 @@ again in the .error-messages class */
   width: 3rem;
 }
 
-#rego-form input[type=checkbox] {
+#rego-form input[type="checkbox"] {
   vertical-align: center;
   margin-right: 20px;
 }
 
 #marketing-text {
   font-size: 1rem;
-  color:#bba17a;
+  color: #bba17a;
 }
 
 /* End of registration.html specific styling*/
+
+/* Start of rego-confirm.html specific styling */
+
+#rego-confirm-text {
+  font-size: 3rem;
+  color: #3b3937;
+}
+
+/* End of assignment 3 specific styling */
 
 /*Start of for-students-and-professionals.html
 specific styling */

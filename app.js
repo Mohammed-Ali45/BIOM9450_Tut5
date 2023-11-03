@@ -13,7 +13,7 @@ function resetBorderStyle(inputField, errorTextElement) {
   inputField.style.borderColor = "";
 }
 
-// Generic error generator, displays errorText parameter as the error text, makes border red too
+// Generic error generator, displays errorText parameter as the error text, makes border of respective input field red too
 function throwError(inputField, errorTextElement, errorText) {
   errorTextElement.innerHTML = errorText;
   inputField.style.borderColor = "red";
@@ -27,11 +27,14 @@ function emailCheck() {
   Defines regular expression used to check if input represents valid email */
   let emailInput = document.getElementById("email");
   let emailError = document.getElementById("email-error");
+  /* Allows lowercase, uppercase, numerical and select special characters before the @
+  any number of '.'s after the @, but only 2 to 4 characters after the last '.' */
   const emailRegex = new RegExp(
     /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
   );
 
-  // Throws error in <span> tag under input element if user input does not match regular expression
+  /* Throws error in <span> tag under input element if user input does not match regular expression
+  Resets the border style and clears error if input does match regular expression*/
   if (emailInput.value.length === 0) {
     emptyFieldError(emailInput, emailError);
   } else if (emailInput.value.match(emailRegex) === null) {
@@ -49,7 +52,8 @@ function passwordCheck() {
   let passwordError = document.getElementById("password-error");
   const passwordRegex = new RegExp(/^[a-zA-Z0-9]{8,}$/);
 
-  // Throws error in <span> tag under input element if user input does not match regular expression
+  /* Throws error in <span> tag under input element if user input does not match regular expression
+  or does not contain at least one lowercase, uppercase, and one numerical character*/
   if (passwordInput.value.length === 0) {
     emptyFieldError(passwordInput, passwordError);
   } else if (passwordInput.value.length < 8) {
@@ -91,7 +95,7 @@ function ReenterPasswordCheck() {
   let rePasswordInput = document.getElementById("repword");
   let rePasswordError = document.getElementById("repassword-error");
 
-  // Displays error if passwords do not match
+  // Displays error if passwords do not match after checking if the field is empty
   if (rePasswordInput.value.length === 0) {
     emptyFieldError(rePasswordInput, rePasswordError);
   } else if (rePasswordInput.value === password.value) {
@@ -110,6 +114,8 @@ function fnameCheck() {
   // Defines a regular expression to check if name falls within constraints
   const nameRegex = new RegExp(/^[a-zA-Z-']+( [a-zA-Z]+)*$/);
 
+  /* Throws error if field is empty, or if input does not match the defined regular expression
+  Clears error and resets border styling when input is valid */
   if (firstNameInput.value.length === 0) {
     emptyFieldError(firstNameInput, firstNameError);
   } else if (firstNameInput.value.match(nameRegex) === null) {
@@ -123,6 +129,7 @@ function fnameCheck() {
   }
 }
 
+// Functions identically to first name input validation above
 function lnameCheck() {
   let lastNameInput = document.getElementById("lname");
   let lastNameError = document.getElementById("lastname-error");
@@ -150,7 +157,7 @@ function dobCheck() {
   let monthInput = document.getElementById("DOBmonth");
   let yearInput = document.getElementById("DOByear");
 
-  //turning string inputs into numbers for interpretation for each input
+  //turning string inputs into numbers for interpretation
   let day = parseInt(dayInput.value);
   let month = parseInt(monthInput.value);
   let year = parseInt(yearInput.value);
@@ -158,9 +165,9 @@ function dobCheck() {
   //retrieving <span> tag for printing errors under intput field
   let dobError = document.getElementById("DOB-error");
 
-  /*flags that designate whether any given field has passed all checks.
-  Errors and error associated styling are cleared from respective input fields if all associated flags are boolean true.
-  Any errors thrown by below code blocks are retained if at least one of the associated flags are boolean false */
+  /*input flags that are true when given field passes all checks.
+  Errors and associated styling are cleared from respective input fields if flags are true.
+  Any errors thrown by below code blocks are retained if at least one flag is false for each input*/
   let isDayHappy;
   let isMonthRangeHappy;
   let isMonthLengthHappy;
@@ -171,21 +178,21 @@ function dobCheck() {
   if (isNaN(year) || year < 1900 || year > 2023) {
     throwError(yearInput, dobError, "Please enter a valid year");
     isYearHappy = false;
-    /*The below else if is a motif throughout this function.
-    It is only reached when the inputted year is valid.
-    It will clear the error message and reset border styling if the inputted year is valid.
-    This prevents it from clearing an error message from a different block,
-    or resetting border styling when an error should still be active */
+    /*This is only reached when the inputted year is valid.
+    Clears error message and resets border styling if existing error also came from this block.
+    Prevents clearing error message thrown by different block,
+    or resetting border styling when an error should still be active*/
   } else if (dobError.textContent === "Please enter a valid year") {
     resetBorderStyle(yearInput, dobError);
-    /*The below else statement is also a motif in this function.
-    It will set the flag for year to true only if the year is valid
-    */
+    //Sets year flag to true only if the year is valid
   } else {
     isYearHappy = true;
   }
 
-  //checking if month is valid
+  /*Month validity checks
+  checking if month is valid, goes through same check as year block.
+  Two input flags included to prevent input length check potentially overriding
+  false result from range check below */
   if (isNaN(month) || month > 12 || month < 1) {
     throwError(monthInput, dobError, "Please enter a valid month");
     isMonthRangeHappy = false;
@@ -195,6 +202,8 @@ function dobCheck() {
     isMonthRangeHappy = true;
   }
 
+  /*Checks month is written in mm format, throws error if not,
+  then performs same check on existing error as year block above */
   if (monthInput.value.length !== 2) {
     throwError(monthInput, dobError, "Please enter month as mm");
     isMonthLengthHappy = false;
@@ -204,7 +213,8 @@ function dobCheck() {
     isMonthLengthHappy = true;
   }
 
-  //checking if day is valid
+  /*Checks if inputted day exists within the inputted month, throws relevant error message if not
+  Checks Feb first, then all months with 30 days. */
   if (month === 2 && day > 28) {
     throwError(dayInput, dobError, "Please enter a calendar day that exists");
     isDayHappy = false;
@@ -217,6 +227,7 @@ function dobCheck() {
     dobError.textContent === "Please enter a calendar day that exists"
   ) {
     resetBorderStyle(dayInput, dobError);
+    //Checks if day can exist within any month, throws error if not
   } else if (isNaN(day) || day > 31 || day < 1) {
     throwError(dayInput, dobError, "Please enter a valid day");
     isDayHappy = false;
@@ -226,7 +237,8 @@ function dobCheck() {
     isDayHappy = true;
   }
 
-  // the final else is not necessary in this block because no errors can take precedence over this one
+  /*Same format check as for mm above. Checks day is written in dd, throws error if not */
+  // the final flag change is not necessary in this block because no errors can take precedence over this one
   if (dayInput.value.length !== 2) {
     throwError(dayInput, dobError, "Please enter day as dd");
     isDayHappy = false;
@@ -235,10 +247,12 @@ function dobCheck() {
   }
 
   // Rudimentary method to prevent future dates inside 2023 from being submitted
+  /* Splitting the below into 2 blocks with unique error messages and giving each block
+  ability to clear its own error like above blocks would be more complete*/
   if (year === 2023 && month > 11) {
     throwError(monthInput, dobError, "Please enter a valid month");
     isMonthRangeHappy = false;
-  } else if (year === 2023 && day > 3) {
+  } else if (year === 2023 && month > 11 && day > 3) {
     throwError(dayInput, dobError, "Please enter a valid day");
     isDayHappy = false;
   }
@@ -256,7 +270,8 @@ function dobCheck() {
     emptyFieldError(yearInput, dobError);
   }
 
-  // Will reset border style if variable checks are happy
+  /* Will reset border style if all input flags for given field are true 
+  clears red border from fields with no active errors*/
   if (isYearHappy === true) {
     yearInput.style.borderColor = "";
   }
@@ -267,5 +282,56 @@ function dobCheck() {
 
   if (isDayHappy === true) {
     dayInput.style.borderColor = "";
+  }
+
+  /* Removes residual error from empty field checks */
+  if (
+    isYearHappy === true &&
+    isMonthRangeHappy === true &&
+    isMonthLengthHappy === true &&
+    isDayHappy === true
+  ) {
+    dobError.innerHTML = "";
+  }
+}
+
+// Throws error if "Select" option from dropdown selected
+function genderCheck() {
+  let genderInput = document.getElementById("gender-dropdown");
+  let genderError = document.getElementById("gender-error");
+
+  if (genderInput.value === "Select") {
+    throwError(
+      genderInput,
+      genderError,
+      "Please select an option from the list"
+    );
+  }
+}
+
+function finalCheck() {
+  // Validating all fields to check for errors
+  emailCheck();
+  passwordCheck();
+  ReenterPasswordCheck();
+  fnameCheck();
+  lnameCheck();
+  dobCheck();
+  genderCheck();
+
+  let submitError = document.getElementById("submit-error");
+
+  if (
+    document.getElementById("email-error").textContent === "" &&
+    document.getElementById("password-error").textContent === "" &&
+    document.getElementById("repassword-error").textContent === "" &&
+    document.getElementById("firstname-error").textContent === "" &&
+    document.getElementById("lastname-error").textContent === "" &&
+    document.getElementById("DOB-error").textContent === ""
+  ) {
+    return true;
+  } else {
+    submitError.innerHTML = "Please review form for incorrect inputs";
+    return false;
   }
 }

@@ -77,7 +77,13 @@
             for more details on guidelines and deadlines.
           </span>
 
-          <form id="rego-form" class="Roboto-Slab" method="get">
+          <form
+            id="rego-form"
+            class="Roboto-Slab"
+            method="get"
+            onSubmit="return finalCheck()"
+            action="rego-confirm.html"
+          >
             <!--Login details section-->
             <h2 class="form-subheading">Login Details</h2>
 
@@ -89,7 +95,6 @@
               name="email"
               id="email"
               onChange="emailCheck()"
-              required
             />
             <br />
             <span id="email-error" class="error-messages Noto-Sans"></span>
@@ -104,7 +109,6 @@
               id="pword"
               placeholder="min 8 characters"
               onChange="passwordCheck()"
-              required
             />
             <br />
             <span id="password-error" class="error-messages Noto-Sans"></span>
@@ -118,7 +122,6 @@
               name="repword"
               id="repword"
               onChange="ReenterPasswordCheck()"
-              required
             />
             <br />
             <span id="repassword-error" class="error-messages Noto-Sans"></span>
@@ -134,7 +137,6 @@
               name="fname"
               id="fname"
               onChange="fnameCheck()"
-              required
             />
             <br />
             <span id="firstname-error" class="error-messages Noto-Sans"></span>
@@ -148,7 +150,6 @@
               name="lname"
               id="lname"
               onChange="lnameCheck()"
-              required
             />
             <br />
             <span id="lastname-error" class="error-messages Noto-Sans"></span>
@@ -164,7 +165,6 @@
               placeholder="dd"
               maxlength="2"
               onChange="dobCheck()"
-              required
             />
             /
             <input
@@ -175,7 +175,6 @@
               placeholder="mm"
               maxlength="2"
               onChange="dobCheck()"
-              required
             />
             /
             <input
@@ -186,7 +185,6 @@
               placeholder="yyyy"
               maxlength="4"
               onChange="dobCheck()"
-              required
             />
             <br />
             <span id="DOB-error" class="error-messages Noto-Sans"></span>
@@ -194,14 +192,15 @@
 
             <label>Gender<span class="required">*</span></label>
             <br />
-            <select id="gender-dropdown" name="gender">
+            <select id="gender-dropdown" name="gender" onChange="genderCheck()">
               <option selected>Select</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
+              <option value="other">Other</option>
               <option value="prefer not to say">Prefer Not to Say</option>
             </select>
             <br />
-            <span id="" class="error-messages Noto-Sans"></span>
+            <span id="gender-error" class="error-messages Noto-Sans"></span>
             <br />
 
             <input type="checkbox" />
@@ -213,6 +212,8 @@
             <br />
 
             <input type="submit" id="submit" value="Register now!" />
+            <br />
+            <span id="submit-error" class="error-messages Noto-Sans"></span>
           </form>
         </div>
       </div>
