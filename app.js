@@ -8,7 +8,7 @@ function emptyFieldError(inputField, errorTextElement) {
 }
 
 // Clears error and resets border color
-function resetBorderStyle(inputField, errorTextElement) {
+function resetErrorAndBorder(inputField, errorTextElement) {
   errorTextElement.innerHTML = "";
   inputField.style.borderColor = "";
 }
@@ -44,7 +44,7 @@ function emailCheck() {
   } else if (emailInput.value.match(emailRegex) === null) {
     throwError(emailInput, emailError, "Please enter a valid email address");
   } else {
-    resetBorderStyle(emailInput, emailError);
+    resetErrorAndBorder(emailInput, emailError);
   }
 }
 
@@ -89,7 +89,7 @@ function passwordCheck() {
   } else if (passwordInput.value.match(passwordRegex) === null) {
     throwError(passwordInput, passwordError, "No Special characters allowed");
   } else {
-    resetBorderStyle(passwordInput, passwordError);
+    resetErrorAndBorder(passwordInput, passwordError);
   }
 }
 
@@ -105,7 +105,7 @@ function ReenterPasswordCheck() {
   if (rePasswordInput.value.length === 0) {
     emptyFieldError(rePasswordInput, rePasswordError);
   } else if (rePasswordInput.value === password.value) {
-    resetBorderStyle(rePasswordInput, rePasswordError);
+    resetErrorAndBorder(rePasswordInput, rePasswordError);
   } else {
     throwError(rePasswordInput, rePasswordError, "Passwords must match");
   }
@@ -133,7 +133,7 @@ function fnameCheck() {
       "No special characters except intermediate spaces and ' -"
     );
   } else {
-    resetBorderStyle(firstNameInput, firstNameError);
+    resetErrorAndBorder(firstNameInput, firstNameError);
   }
 }
 
@@ -153,7 +153,7 @@ function lnameCheck() {
       "No special characters except intermediate spaces and ' -"
     );
   } else {
-    resetBorderStyle(lastNameInput, lastNameError);
+    resetErrorAndBorder(lastNameInput, lastNameError);
   }
 }
 
@@ -179,12 +179,11 @@ function dobCheck() {
   Any errors thrown by below code blocks are retained if at least one flag is
   false for each input */
   let isDayHappy;
-  let isMonthRangeHappy;
-  let isMonthLengthHappy;
+  let isMonthHappy;
   let isYearHappy;
 
-  /* Year validity check.
-  Error is displayed if a year too far into the past or any year in the future
+  // Year checks
+  /* Error is displayed if a year too far into the past or any year in the future
   is inputted. */
   if (isNaN(year) || year < 1900 || year > 2023) {
     throwError(yearInput, dobError, "Please enter a valid year");
@@ -195,36 +194,35 @@ function dobCheck() {
     Prevents clearing error message thrown by different block,
     or resetting border styling when an error should still be active */
   } else if (dobError.textContent === "Please enter a valid year") {
-    resetBorderStyle(yearInput, dobError);
+    resetErrorAndBorder(yearInput, dobError);
     //Sets year flag to true only if the year is valid
   } else {
     isYearHappy = true;
   }
 
-  /* Month validity checks
-  checking if month is valid, goes through same check as year block.
+  // Month checks
+  /* checking if month is valid, goes through same check as year block.
   Two input flags included to prevent input length check potentially overriding
   false result from range check below */
   if (isNaN(month) || month > 12 || month < 1) {
     throwError(monthInput, dobError, "Please enter a valid month");
-    isMonthRangeHappy = false;
+    isMonthHappy = false;
   } else if (dobError.textContent === "Please enter a valid month") {
-    resetBorderStyle(monthInput, dobError);
+    resetErrorAndBorder(monthInput, dobError);
   } else {
-    isMonthRangeHappy = true;
+    isMonthHappy = true;
   }
 
   /*Checks month is written in mm format, throws error if not,
   then performs same check on existing error as year block above */
   if (monthInput.value.length !== 2) {
     throwError(monthInput, dobError, "Please enter month as mm");
-    isMonthLengthHappy = false;
+    isMonthHappy = false;
   } else if (dobError.textContent === "Please enter month as mm") {
-    resetBorderStyle(monthInput, dobError);
-  } else {
-    isMonthLengthHappy = true;
+    resetErrorAndBorder(monthInput, dobError);
   }
 
+  // Day checks
   /*Checks if inputted day exists within the inputted month, throws relevant
   error message if not.
   Checks Feb first, then all months with 30 days */
@@ -236,16 +234,17 @@ function dobCheck() {
     day > 30
   ) {
     throwError(dayInput, dobError, "Please enter a calendar day that exists");
+    isDayHappy = false;
   } else if (
     dobError.textContent === "Please enter a calendar day that exists"
   ) {
-    resetBorderStyle(dayInput, dobError);
-    //Checks if day can exist within any month, throws error if not
+    resetErrorAndBorder(dayInput, dobError);
   } else if (isNaN(day) || day > 31 || day < 1) {
+    //Checks if day can exist within any month, throws error if not
     throwError(dayInput, dobError, "Please enter a valid day");
     isDayHappy = false;
   } else if (dobError.textContent === "Please enter a valid day") {
-    resetBorderStyle(dayInput, dobError);
+    resetErrorAndBorder(dayInput, dobError);
   } else {
     isDayHappy = true;
   }
@@ -258,15 +257,17 @@ function dobCheck() {
     throwError(dayInput, dobError, "Please enter day as dd");
     isDayHappy = false;
   } else if (dobError.textContent === "Please enter day as dd") {
-    resetBorderStyle(dayInput, dobError);
+    resetErrorAndBorder(dayInput, dobError);
   }
+
+  //end of day checks
 
   /* Rudimentary method to prevent future dates inside 2023 from being
   submitted */
   if (year === 2023 && month > 11) {
     throwError(monthInput, dobError, "Please enter a valid month");
-    isMonthRangeHappy = false;
-  } else if (year === 2023 && month > 11 && day > 3) {
+    isMonthHappy = false;
+  } else if (year === 2023 && month >= 11 && day > 3) {
     throwError(dayInput, dobError, "Please enter a valid day");
     isDayHappy = false;
   }
@@ -290,7 +291,7 @@ function dobCheck() {
     yearInput.style.borderColor = "";
   }
 
-  if (isMonthRangeHappy === true && isMonthLengthHappy === true) {
+  if (isMonthHappy === true) {
     monthInput.style.borderColor = "";
   }
 
@@ -299,12 +300,7 @@ function dobCheck() {
   }
 
   /* Removes residual error from empty field checks */
-  if (
-    isYearHappy === true &&
-    isMonthRangeHappy === true &&
-    isMonthLengthHappy === true &&
-    isDayHappy === true
-  ) {
+  if (isYearHappy === true && isMonthHappy === true && isDayHappy === true) {
     dobError.innerHTML = "";
   }
 }
