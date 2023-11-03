@@ -316,11 +316,16 @@ function genderCheck() {
       genderError,
       "Please select an option from the list"
     );
+  } else {
+    resetErrorAndBorder(genderInput, genderError);
   }
 }
 
 function finalCheck() {
-  // Validating all fields to check for errors
+  /* Validating all fields to check for errors 
+  If this function returns false, the form is not submitted and error messages
+  are displayed under submission button and input fields that failed their
+  checks*/
   emailCheck();
   passwordCheck();
   ReenterPasswordCheck();
